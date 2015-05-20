@@ -12,7 +12,7 @@ Source3:	Minecraft/minecraft.desktop
 Source4:	Minecraft/LICENSE
 BuildArch:	noarch
 
-BuildRequires:	java
+BuildRequires:	java,desktop-file-utils
 Requires:	java 
 
 %description 
@@ -36,7 +36,7 @@ mkdir -p %{buildroot}%{_prefix}/share/licenses/Mojang/Minecraft
 cp -p %SOURCE0 %{buildroot}%{_prefix}/share/Mojang/Minecraft/
 cp -p %SOURCE1 %{buildroot}%{_bindir}/
 cp -p %SOURCE2 %{buildroot}%{_prefix}/share/icons/hicolor/256x256/apps/
-desktop-file-install %SOURCE3 %{buildroot}%{_prefix}/share/applications/
+desktop-file-install --dir=%{buildroot}%{_datadir}/share/applications/ %SOURCE3
 cp -p %SOURCE4 %{buildroot}%{_prefix}/share/licenses/Mojang/Minecraft/
 
 %files
